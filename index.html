@@ -1,0 +1,828 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodieland</title>
+    <link rel="stylesheet" href="instagram.css">
+    <link rel="stylesheet" href="option.css">
+    <link rel="stylesheet" href="option2.css">
+        <link rel="stylesheet" href="foot.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ header {
+     background-color: #fff;
+     padding: 1rem 2rem;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+ }
+
+ .container {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     max-width: 1200px;
+     margin: auto;
+ }
+
+ .logo {
+     font-size: 1.5rem;
+     font-weight: 600;
+ }
+
+ .logo span {
+     font-style: italic;
+     font-weight: normal;
+ }
+
+ .nav-links,
+ .social-icons {
+     display: flex;
+     align-items: center;
+     list-style: none;
+     gap: 2rem;
+ }
+
+ .nav-links a,
+ .social-icons a {
+     text-decoration: none;
+     color: #000;
+     font-size: 0.95rem;
+     transition: color 0.3s ease;
+ }
+
+ .nav-links a:hover,
+ .social-icons a:hover {
+     color: #ff4d00;
+ }
+
+ .hamburger {
+     display: none;
+     font-size: 1.5rem;
+     cursor: pointer;
+ }
+
+ /* Responsive Styles */
+ @media (max-width: 768px) {
+
+     .nav-links,
+     .social-icons {
+         display: none;
+         flex-direction: column;
+         gap: 1rem;
+         background: #fff;
+         padding: 1rem;
+         position: absolute;
+         top: 70px;
+         right: 2rem;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     }
+
+     .nav-links.active,
+     .social-icons.active {
+         display: flex;
+     }
+
+     .hamburger {
+         display: block;
+     }
+ }
+      
+
+
+        
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem 2rem;
+            background-image: url("image/b.jpg");
+            background-size: cover;       /* Make it cover entire area */
+  background-repeat: no-repeat; /* Prevent repeating */
+  background-position: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .tag {
+            background: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #d35400;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .info span {
+            background: #fff;
+            padding: 0.4rem 0.8rem;
+            margin-right: 0.5rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .author {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .author img {
+            border-radius: 50%;
+            height:40px;
+            width:40px;
+
+            margin-right: 0.5rem;
+        }
+
+        .view-btn {
+            padding: 0.6rem 1.2rem;
+            background: #111;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .hero-image img {
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .categories {
+            padding: 2rem;
+            background: #fff;
+            text-align: center;
+        }
+
+        .category-list {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .category-item {
+            background: #f9f9f9;
+            border-radius: 20px;
+            padding: 1rem;
+            width: 90px;
+            height: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .category-item p {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .view-all {
+            padding: 0.6rem 1.2rem;
+            background: #d9f3ff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+  
+    <header>
+        <div class="container">
+            <div class="logo"> <span>Foodie</span><strong>land.</strong></div>
+            <nav id="navbar">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Recipes</a></li>
+                    <li><a href="overview_page.html">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="about.html">About us</a></li>
+                </ul>
+                <ul class="social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <span class="tag">🔥 Hot Recipes</span>
+            <h1>Spicy delicious<br>chicken wings</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+               
+            <div class="info">
+                <span>⏱️ 30 Minutes</span>
+                <span>🍗 Chicken</span>
+            </div>
+            <div class="author">
+                <img src="image/john.jpg" alt="John Smith" />
+                <span>John Smith - 15 March 2022</span>
+            </div>
+            <button class="view-btn">▶ View Recipes</button>
+        </div>
+      
+      
+    </section>
+
+    <section class="categories">
+        <h2>Categories</h2>
+        <div class="category-list">
+            <div class="category-item">🍙<p>Breakfast</p>
+            </div>
+            <div class="category-item">🥬<p>Vegan</p>
+            </div>
+            <div class="category-item">🥩<p>Meat</p>
+            </div>
+            <div class="category-item">🍰<p>Dessert</p>
+            </div>
+            <div class="category-item">🥪<p>Lunch</p>
+            </div>
+            <div class="category-item">🍫<p>Chocolate</p>
+            </div>
+        </div>
+        <button class="view-all">View All Categories</button>
+    </section>
+
+
+
+<body>
+
+    <section class="header">
+        <h1>Simple and tasty recipes</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            magna aliqua enim ad minim</p>
+    </section>
+
+    <section class="recipes">
+        <!-- Recipe 1 -->
+        <div class="recipe-card">
+            <img src="image/burger.jpg" alt="Big and Juicy Wagyu Beef Cheeseburger">
+            <div class="recipe-info">
+                <h3>Big and Juicy Wagyu Beef Cheeseburger</h3>
+                <div class="recipe-meta">
+                <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                " alt="Time" class="icon"> <span>30 Minutes</span>
+                <img src="https://img.icons8.com/ios-filled/50/meal.png
+                " alt="Sweet" class="icon"> <span>Sweet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 2 -->
+        <div class="recipe-card">
+            <img src="image/salmon.jpg" alt="Fresh Lime Roasted Salmon with Ginger Sauce">
+            <div class="recipe-info">
+                <h3>Fresh Lime Roasted Salmon with Ginger Sauce</h3>
+                <div class="recipe-meta">
+                    <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                    " alt="Time" class="icon"> <span>30 Minutes</span>
+                    <img src="https://img.icons8.com/ios-filled/50/meal.png
+                    " alt="Sweet" class="icon"> <span>Sweet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 3 -->
+        <div class="recipe-card">
+            <img src="image/pancake.jpg" alt="Strawberry Oatmeal Pancake with Honey Syrup">
+            <div class="recipe-info">
+                <h3>Strawberry Oatmeal Pancake with Honey Syrup</h3>
+                <div class="recipe-meta">
+                <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                " alt="Time" class="icon"> <span>30 Minutes</span>
+                <img src="https://img.icons8.com/ios-filled/50/meal.png
+                " alt="Sweet" class="icon"> <span>Sweet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 4 -->
+        <div class="recipe-card">
+            <img src="image/salads.jpg" alt="Fresh and Healthy Mixed Mayonnaise Salad">
+            <div class="recipe-info">
+                <h3>Fresh and Healthy Mixed Mayonnaise Salad</h3>
+                <div class="recipe-meta">
+                <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                " alt="Time" class="icon"> <span>30 Minutes</span>
+                <img src="https://img.icons8.com/ios-filled/50/meal.png
+                " alt="Sweet" class="icon"> <span>Sweet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 5 -->
+        <div class="recipe-card">
+            <img src="image/meatballs.jpg" alt="Chicken Meatballs with Cheese">
+            <div class="recipe-info">
+                <h3>Chicken Meatballs with Cheese</h3>
+                <div class="recipe-meta">
+                <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                " alt="Time" class="icon"> <span>30 Minutes</span>
+                <img src="https://img.icons8.com/ios-filled/50/meal.png
+                " alt="Sweet" class="icon"> <span>Sweet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Note Card -->
+        <div class="recipe-card note-card">
+            <div class="note-content">
+                <h2>Don't forget to eat healthy food</h2>
+                <img src="image/healthy-food.jpg" alt="Healthy Food">
+            </div>
+        </div>
+
+        <!-- Recipe 6 -->
+        <div class="recipe-card">
+            <img src="image/fruity-pancake.jpg" alt="Fruity Pancake with Orange & Blueberry">
+            <div class="recipe-info">
+                <h3>Fruity Pancake with Orange & Blueberry</h3>
+                <div class="recipe-meta">
+                    <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+" alt="Time" class="icon"> <span>30 Minutes</span>
+                    <img src="https://img.icons8.com/ios-filled/50/meal.png
+" alt="Sweet" class="icon"> <span>Sweet</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recipe 7 -->
+        <div class="recipe-card">
+            <img src="image/onepot.jpg" alt="The Best Easy One Pot Chicken and Rice">
+            <div class="recipe-info">
+                <h3>The Best Easy One Pot Chicken and Rice</h3>
+                <div class="recipe-meta">
+                <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                " alt="Time" class="icon"> <span>30 Minutes</span>
+                <img src="https://img.icons8.com/ios-filled/50/meal.png
+                " alt="Sweet" class="icon"> <span>Sweet</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="directions">
+        <div class="directions-image">
+            <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092
+" alt="Cooking Lady">
+        </div>
+
+        <div class="directions-content">
+            <h2>Directions</h2>
+
+            <div class="step">
+                <h3>1. Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+            <div class="step">
+                <h3>2. Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+            <div class="step">
+                <h3>3. Lorem ipsum dolor sit amet</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Everyone can be a chef in their own kitchen</h2>
+        <a href="#" class="cta-button">Learn More</a>
+    </section>
+ 
+   
+    
+
+    
+   
+
+
+</body>
+
+
+
+
+
+
+
+<body>
+
+    <section class="instagram-section">
+        <h2>Check out <span>@foodieland</span> on Instagram</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua enim ad minim.</p>
+
+        <div class="instagram-grid">
+            <!-- Post 1 -->
+            <div class="insta-post">
+                <div class="post-header">
+                    <img src="image/logoprofile.png" alt="Profile Pic">
+                    <div>
+                        <strong>Foodieland.</strong>
+                        <p>Tokyo, Japan</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <img src="image/salad.jpg" alt="Salad Dish" class="post-image">
+
+                <div class="post-actions">
+                    <div class="left-actions">
+                        <i class="far fa-heart"></i>
+                        <i class="far fa-comment"></i>
+                        <i class="far fa-paper-plane"></i>
+                    </div>
+                    <div class="right-actions">
+                        <i class="far fa-bookmark"></i>
+                    </div>
+                </div>
+
+                <div class="post-likes">
+                    Liked by craig_love and 44,686 others
+                </div>
+
+                <div class="post-caption">
+                    <strong>Foodieland.</strong> The vegetables dishes need to have certain vitamin for those people
+                </div>
+
+                <div class="post-date">
+                    September 19
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="insta-post">
+                <div class="post-header">
+                    <img src="image/logoprofile.png" alt="lo Pic">
+                    <div>
+                        <strong>Foodieland.</strong>
+                        <p>Tokyo, Japan</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <img src="image/pancakes.jpg" alt="Pancake Stack" class="post-image">
+
+                <div class="post-actions">
+                    <div class="left-actions">
+                        <i class="far fa-heart"></i>
+                        <i class="far fa-comment"></i>
+                        <i class="far fa-paper-plane"></i>
+                    </div>
+                    <div class="right-actions">
+                        <i class="far fa-bookmark"></i>
+                    </div>
+                </div>
+
+                <div class="post-likes">
+                    Liked by craig_love and 44,686 others
+                </div>
+
+                <div class="post-caption">
+                    <strong>Foodieland.</strong> Sweet food can bring someone into happiness as long as they don’t eat
+                    too much
+                </div>
+
+                <div class="post-date">
+                    September 19
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="insta-post">
+                <div class="post-header">
+                    <img src="image/logoprofile.png" alt="lo Pic">
+                    <div>
+                        <strong>Foodieland.</strong>
+                        <p>Tokyo, Japan</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <img src="image/onions.jpg" alt="Onions and Spices" class="post-image">
+
+                <div class="post-actions">
+                    <div class="left-actions">
+                        <i class="far fa-heart"></i>
+                        <i class="far fa-comment"></i>
+                        <i class="far fa-paper-plane"></i>
+                    </div>
+                    <div class="right-actions">
+                        <i class="far fa-bookmark"></i>
+                    </div>
+                </div>
+
+                <div class="post-likes">
+                    Liked by craig_love and 44,686 others
+                </div>
+
+                <div class="post-caption">
+                    <strong>Foodieland.</strong> What are you doing before start cooking? prepare the tools or
+                    ingredients?
+                </div>
+
+                <div class="post-date">
+                    September 19
+                </div>
+            </div>
+
+            <!-- Post 4 -->
+            <div class="insta-post">
+                <div class="post-header">
+                    <img src="image/logoprofile.png" alt="Profile Pic">
+                    <div>
+                        <strong>Foodieland.</strong>
+                        <p>Tokyo, Japan</p>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <img src="image/steak.jpg" alt="Grilled Steak" class="post-image">
+
+                <div class="post-actions">
+                    <div class="left-actions">
+                        <i class="far fa-heart"></i>
+                        <i class="far fa-comment"></i>
+                        <i class="far fa-paper-plane"></i>
+                    </div>
+                    <div class="right-actions">
+                        <i class="far fa-bookmark"></i>
+                    </div>
+                </div>
+
+                <div class="post-likes">
+                    Liked by craig_love and 44,686 others
+                </div>
+
+                <div class="post-caption">
+                    <strong>Foodieland.</strong> Steak never be wrong, it’s suitable for you who want romantic dinner
+                </div>
+
+                <div class="post-date">
+                    September 19
+                </div>
+            </div>
+
+        </div>
+
+        <a href="#" class="insta-button">Visit Our Instagram</a>
+    </section>
+
+</body>
+
+    <body>
+    
+        
+    
+        <section class="recipes-section">
+            <div class="recipes-header">
+                <h1>Try this delicious recipe to make your day</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                    dolore magna aliqua enim ad minim</p>
+            </div>
+    
+            <div class="recipes-grid">
+    
+                <!-- Recipe Card 1 -->
+                <div class="recipe-card">
+                    <img src="image/fruit-salad.jpg" alt="Tropical Fruit Salad">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Mixed Tropical Fruit Salad with Superfood Boosts</h3>
+                    <div class="recipe-meta">
+                    <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                    " alt="Time" class="icon"> <span>30 Minutes</span>
+                    <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                    " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+                <!-- Recipe Card 2 -->
+                <div class="recipe-card">
+                    <img src="image/juicy-wagyu-beef.jpg" alt="Beef Cheeseburger">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Big and Juicy Wagyu Beef Cheeseburger</h3>
+                    <div class="recipe-meta">
+                        <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                        " alt="Time" class="icon"> <span>30 Minutes</span>
+                        <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                        " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+                <!-- Recipe Card 3 -->
+                <div class="recipe-card">
+                    <img src="image/fried-rice.jpg" alt="Fried Rice">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Healthy Japanese Fried Rice with Asparagus</h3>
+                    <div class="recipe-meta">
+                        <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                        " alt="Time" class="icon"> <span>30 Minutes</span>
+                        <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                        " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+                <!-- Recipe Card 4 -->
+                <div class="recipe-card">
+                    <img src="image/taco.jpg" alt="Taco">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Cauliflower Walnut Vegetarian Taco Meat</h3>
+                    <div class="recipe-meta">
+                        <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                        " alt="Time" class="icon"> <span>30 Minutes</span>
+                        <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                        " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+                <!-- Recipe Card 5 -->
+                <div class="recipe-card">
+                    <img src="image/chicken-salad.jpg" alt="Chicken Salad">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Rainbow Chicken Salad with Almond Honey Mustard Dressing</h3>
+                    <div class="recipe-meta">
+                    <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                    " alt="Time" class="icon"> <span>30 Minutes</span>
+                    <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                    " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+                <!-- Recipe Card 6 -->
+                <div class="recipe-card">
+                    <img src="image/spicy-sandwiches.jpg" alt="Spicy Sandwiches">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Barbeque Spicy Sandwiches with Chips</h3>
+                    <div class="recipe-meta">
+                        <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                        " alt="Time" class="icon"> <span>30 Minutes</span>
+                        <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                        " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+                <!-- Recipe Card 7 -->
+                <div class="recipe-card">
+                    <img src="image/firecracker.jpg" alt="Lettuce Wraps">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Firecracker Vegan Lettuce Wraps - Spicy!</h3>
+                    <div class="recipe-meta">
+                        <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                        " alt="Time" class="icon"> <span>30 Minutes</span>
+                        <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                        " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+                <!-- Recipe Card 8 -->
+                <div class="recipe-card">
+                    <img src="image/chicken-ramen.jpg" alt="Chicken Ramen">
+                    <button class="heart-btn">❤️</button>
+                    <h3>Chicken Ramen Soup with Mushroom</h3>
+                    <div class="recipe-meta">
+                    <img src="https://img.icons8.com/ios-filled/50/clock--v1.png
+                                    " alt="Time" class="icon"> <span>30 Minutes</span>
+                    <img src="https://img.icons8.com/ios-filled/50/meal.png
+                                    " alt="Sweet" class="icon"> <span>Sweet</span>
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+    
+
+
+    <div class="main-container">
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <div class="newsletter-content">
+                <h1>Deliciousness to your inbox</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliquat enim ad minim</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address...">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="hero-images">
+
+                <img src="image/last1.png" alt="Vegetables" class="veggie-img">
+                <img src="image/last2.png" alt="Salad Dish" class="dish-img">
+            </div>
+            
+        </section>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h2 class="logo">Foodieland.</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Recipes</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Contact</a>
+                    <a href="#">About us</a>
+                </div>
+            </div>
+
+        <div class="footer-bottom">
+            <div></div>
+            <p>© 2020 Flowbase. Powered by <span>Webflow</span></p>
+           
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        </footer>
+
+    </div>
+
+
+
+
+
+
+
+    </body>
+
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const socialIcons = document.querySelector('.social-icons');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        socialIcons.classList.toggle('active');
+    });
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</html>

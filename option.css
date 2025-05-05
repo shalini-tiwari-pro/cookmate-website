@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+    color: #333;
+}
+
+.header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #666;
+    font-size: 1rem;
+}
+
+.recipes {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); */
+    grid-template-columns:repeat(3,1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.recipe-card {
+background-color: #e1f6fb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.recipe-info {
+    padding: 15px;
+}
+
+.recipe-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.recipe-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.recipe-meta .icon {
+    width: 16px;
+    height: 16px;
+}
+
+.note-card {
+    background: #1c7358;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.note-card img {
+    width: 150px;
+    margin-top: 20px;
+}
+
+.directions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.directions-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.directions-content {
+    flex: 1;
+    margin-left: 30px;
+}
+
+.directions-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.step {
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.cta {
+    background: #f2f2f2;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #000;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background: #333;
+}
